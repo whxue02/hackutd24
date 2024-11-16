@@ -1,0 +1,97 @@
+.homepageBody {
+    height: 100vh;
+    width: 100%;
+    background-image: url('/public/images/landing.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.containter.left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+.title {
+    width: 30vw;
+    text-align: left;
+    margin-top: 35%;
+    margin-left: 50px;
+    margin-bottom:0;
+}
+
+.subTitle {
+    margin: 0;
+    font-size: 45pt;
+    margin-left: 60px;
+    color: #8F1B2F;
+    font-family: "Work Sans";
+    font-weight: 600;
+}
+
+.text {
+    margin: 0;
+    font-size: 20pt;
+    margin-left: 60px;
+    margin-top: 10px;
+    font-family: "Raleway";
+    font-weight: bold;
+}
+
+.analyze {
+    background-color: #EB0A1E; 
+    color: white;              
+    border: none;               
+    padding: 10px 20px;    
+    font-size: 16px;        
+    font-weight: 600;  
+    border-radius: 5px;     
+    cursor: pointer;           
+    box-shadow: 3px 3px #8F1B2F;
+    transition: all 0.3s ease; 
+    width: 300px;
+    margin-left: 60px;
+    margin-top: 20px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.analyze:hover {
+    background-color: #b80f1d;
+}
+
+.upload {
+    background-color: #fff; 
+    color: black;              
+    border: none;               
+    padding: 10px 20px;    
+    font-size: 16px;        
+    font-weight: 600;  
+    border-radius: 5px;     
+    cursor: pointer;           
+    box-shadow: 3px 3px #868484;
+    transition: all 0.3s ease; 
+    margin-left: 20px;
+    margin-top: 20px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.upload:hover {
+    background-color: #ddd9d9;
+}
+
+.margin-top20 {
+    margin-top: 20px;
+}
+
+.hoverEnlarge {
+    animation-duration: 2s;
+    transition: transform .3s ease-in-out;
+}
+
+.hoverEnlarge:hover {
+    transform: scale(1.05);
+    
+}
