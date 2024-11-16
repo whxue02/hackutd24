@@ -1,0 +1,8 @@
+.homepageBody {
+    height: 100vh;
+    width: auto;
+    background-image: url('/public/images/LandingPage.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
