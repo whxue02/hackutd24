@@ -18,9 +18,9 @@ const Analyze = () => {
             <Navbar />
             <div style={styles.container}>
                 <Box title="Trends" subtitle="2021-2025">
-                    <p>Test</p>
+                    <p>Graph goes here</p>
                 </Box>
-                <Box subtitle="2021-2025">
+                <Box title="EcoVison" subtitle="Powered by Samba AI" customTitleColor="#EB0A1E">
                     <p>Test</p>
                 </Box>
             </div>

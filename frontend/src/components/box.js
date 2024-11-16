@@ -27,9 +27,9 @@ const styles = {
         fontFamily: "Work Sans",
     },
     subtitle: {
-        fontSize: "20px", 
+        fontSize: "18px", 
         marginLeft: "20px", // Space between title and subtitle
-        color: "gray", 
+        color: "black", 
         marginTop: "20px",
         marginBottom: "0px",
         fontFamily: "Raleway",
@@ -47,12 +47,12 @@ const styles = {
     },
 };
 
-const Box = ({ title, subtitle, children }) => {
+const Box = ({ title, subtitle, children, customTitleColor = "black" }) => {
     return (
         <div style={styles.box}>
             {(title || subtitle) && (
                 <div style={styles.titleContainer}>
-                    {title && <p style={styles.title}>{title}</p>}
+                    {title && <p style={{ ...styles.title, color: customTitleColor }}>{title}</p>}
                     {subtitle && <p style={styles.subtitle}>{subtitle}</p>}
                 </div>
             )}
