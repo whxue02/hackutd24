@@ -1,5 +1,6 @@
 import Navbar from "../components/navbar"
 import Box from "../components/box"
+import "animate.css"
 
 const styles = {
     container: {
@@ -14,11 +15,11 @@ const styles = {
 
 const Upload = () => {
     return (
-        <div>
+        <div className="animate__animated animate__fadeIn">
             <Navbar />
             <div style={styles.container}>
-                <Box>
-                    <p>Upload</p>
+                <Box title="Upload File">
+                    <p>test</p>
                 </Box>
             </div>
         </div>
