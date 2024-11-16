@@ -16,15 +16,15 @@ const Homepage = () => {
                 <div>
                     <p className="text">Clear Insights, Efficient Futures.</p>
                 </div>
-                <div>
+                <div className="margin-top20">
                     <Link to="/analyze">
                     <button className="analyze">
                         Analyze
                     </button>
                     </Link>
                     <Link to="/upload">
-                    <button>
-                        Upload
+                    <button className="upload">
+                        U
                     </button>
                     </Link>
                 </div>

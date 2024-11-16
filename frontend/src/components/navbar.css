@@ -43,6 +43,10 @@
     transition: all .15s ease-in-out;
 }
 
+.nav-string:hover {
+    color: #8F1B2F; 
+}
+
 .verticalDash {
     font-size: 30px;
     font-weight: 100;
