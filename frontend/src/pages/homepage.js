@@ -1,12 +1,13 @@
 import Navbar from "../components/navbar"
 import { Link } from "react-router-dom"
 import "./cheryl.css"
+import "animate.css"
 
 const Homepage = () => {
     return(
-        <div className="homepageBody">
+        <div className="homepageBody animate__animated animate__fadeIn">
             <Navbar/>
-            <div className="containter left">
+            <div className="containter left animate__animated animate__fadeInDown">
                 <div>
                     <img src="/images/toyota.png" className="title"></img>
                 </div>

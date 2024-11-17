@@ -6,7 +6,6 @@ const styles = {
         display: "flex",
         flexDirection: "column", // Stack main content vertically
         alignItems: "flex-start", // Align items to the left
-        boxShadow: "3px 3px 0px 0px rgba(0, 0, 0, 0.25)",
         marginBottom: "30px",
         paddingTop: "10px",
         paddingBottom: "10px",
@@ -27,9 +26,9 @@ const styles = {
         fontFamily: "Work Sans",
     },
     subtitle: {
-        fontSize: "20px", 
+        fontSize: "18px", 
         marginLeft: "20px", // Space between title and subtitle
-        color: "gray", 
+        color: "black", 
         marginTop: "20px",
         marginBottom: "0px",
         fontFamily: "Raleway",
@@ -39,20 +38,14 @@ const styles = {
         width: "100%",
         backgroundColor: "rgba(143, 27, 47, 0.3)",
     },
-    children: {
-        paddingLeft: "30px",
-        paddingRight: "30px",
-        marginTop: "20px",
-        marginBottom: "20px",
-    },
 };
 
-const Box = ({ title, subtitle, children }) => {
+const Box = ({ title, subtitle, children, customTitleColor = "black" }) => {
     return (
         <div style={styles.box}>
             {(title || subtitle) && (
                 <div style={styles.titleContainer}>
-                    {title && <p style={styles.title}>{title}</p>}
+                    {title && <p style={{ ...styles.title, color: customTitleColor }}>{title}</p>}
                     {subtitle && <p style={styles.subtitle}>{subtitle}</p>}
                 </div>
             )}
