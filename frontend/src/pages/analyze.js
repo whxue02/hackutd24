@@ -18,7 +18,7 @@ const Analyze = () => {
 
     useEffect(() => {
         if (contentRef.current) {
-            setContentHeight(contentRef.current.clientHeight + 120); 
+            setContentHeight(contentRef.current.clientHeight + 460); 
         }
     }, [Tab]);
 
