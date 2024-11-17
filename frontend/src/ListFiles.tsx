@@ -1,51 +1,50 @@
-async function main() {
-	try {
-		// Build optional queries
-		const queryParams = new URLSearchParams();
+import React, { useState } from "react";
+import axios from "axios";
 
-		// Filter by name
-		//queryParams.append("name", "hello.txt");
+const ListFiles: React.FC = () => {
+  const [files, setFiles] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
 
-		// Filter by group ID
-		// queryParams.append("group", "18893556-de8e-4229-8a9a-27b95468dd3e");
+  const fetchFiles = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get("https://api.pinata.cloud/v3/files", {
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_PINATA_JWT}`,
+        },
+      });
+      setFiles(response.data.rows);
+    } catch (error) {
+      console.error("Error fetching files:", error);
+      alert("Failed to fetch files. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
-		// Filter by mime type
-		// queryParams.append("mimeType", "text/plain");
+  return (
+    <div>
+      <h1>List Uploaded Files</h1>
+      <button onClick={fetchFiles} disabled={loading}>
+        {loading ? "Loading..." : "Fetch Files"}
+      </button>
+      {files.length > 0 && (
+        <ul>
+          {files.map((file, index) => (
+            <li key={index}>
+              <a
+                href={`${process.env.GATEWAY_URL || "https://gateway.pinata.cloud/ipfs"}/${file.cid}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {file.name || `File ${index + 1}`}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
 
-		// Filter by CID
-		// queryParams.append(
-		// 	"cid",
-		// 	"bafkreicnu2aqjkoglrlrd65giwo4l64pdajxffk6jtq2vb7yaiopc3yu7m",
-		// );
-
-		// Set result limit
-		// queryParams.append("limit", "100");
-
-		// Add pagination token
-		// queryParams.append(
-		// 	"pageToken",
-		// 	"MDE5MTk0NTctYzJjNi03NzBlLTkzOTEtOGM3MmM0ZjQxZjY0",
-		// );
-
-		const queryString = queryParams.toString();
-
-		// Construct the URL
-		const url = `https://api.pinata.cloud/v3/files${queryString ? `?${queryString}` : ""}`;
-
-		// Fetch list of files
-		const filesRequest = await fetch(url, {
-			method: "GET",
-			headers: {
-				Authorization: `Bearer ${process.env.PINATA_JWT}`,
-			},
-		});
-
-		// Parse the response and log it out
-		const files = await filesRequest.json();
-		console.log(files.data);
-	} catch (error) {
-		console.log(error);
-	}
-}
-
-main();
+export default ListFiles;

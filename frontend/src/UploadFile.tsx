@@ -1,41 +1,68 @@
-async function main() {
-	try {
-		// Construct a file according to the Web API
-		const file = new File(["Hello World!"], "hello.txt");
+import React, { useState } from "react";
+import axios from "axios";
 
-		// Create form data and attach the file
-		const data = new FormData();
-		data.append("file", file);
+const UploadFile: React.FC = () => {
+  const [file, setFile] = useState<File | null>(null);
+  const [fileUrl, setFileUrl] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
-		// Optional: Attach other info about the file
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files) {
+      setFile(event.target.files[0]);
+    }
+  };
 
-		// Custom name
-		//data.append("name", "my cool file")
+  const handleUpload = async () => {
+    if (!file) {
+      alert("Please select a file to upload.");
+      return;
+    }
 
-		// Upload to a group
-		//data.append("group_id", "my-group-id")
+    setLoading(true);
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
 
-		// keyvalue metadata
-		// const kv = JSON.stringify({
-		//   env: "prod",
-		//   user: "sudo"
-		// })
-		// data.append("keyvalues", kv)
+      const response = await axios.post(
+        "https://uploads.pinata.cloud/v3/files",
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.REACT_APP_PINATA_JWT}`,
+          },
+        }
+      );
 
-		// Upload the file
-		const uploadRequest = await fetch("https://uploads.pinata.cloud/v3/files", {
-			method: "POST",
-			headers: {
-				Authorization: `Bearer ${process.env.PINATA_JWT}`,
-			},
-			body: data,
-		});
-		// Parse the response and log it out
-		const upload = await uploadRequest.json();
-		console.log(upload);
-	} catch (error) {
-		console.log(error);
-	}
-}
+      const ipfsHash = response.data.IpfsHash;
+      const gatewayUrl = process.env.GATEWAY_URL || "https://gateway.pinata.cloud/ipfs";
+      const url = `${gatewayUrl}/${ipfsHash}`;
+      setFileUrl(url);
+      alert("File uploaded successfully!");
+    } catch (error) {
+      console.error("Error uploading file:", error);
+      alert("Failed to upload file. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
-main();
+  return (
+    <div>
+      <h1>Upload Company Data</h1>
+      <input type="file" accept=".txt,.json" onChange={handleFileChange} />
+      <button onClick={handleUpload} disabled={loading}>
+        {loading ? "Uploading..." : "Upload"}
+      </button>
+      {fileUrl && (
+        <div>
+          <h2>File URL:</h2>
+          <a href={fileUrl} target="_blank" rel="noopener noreferrer">
+            {fileUrl}
+          </a>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default UploadFile;
