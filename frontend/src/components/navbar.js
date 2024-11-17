@@ -18,6 +18,10 @@ const Navbar = () => {
                     <Link to="/upload" className="nav-string">
                         Upload
                     </Link>
+                    <p className="verticalDash">|</p>
+                    <Link to="/chat" className="nav-string">
+                        Chat
+                    </Link>
                 </div>
         </nav>
     )
