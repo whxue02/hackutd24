@@ -38,13 +38,6 @@ const styles = {
         width: "100%",
         backgroundColor: "rgba(143, 27, 47, 0.3)",
     },
-    children: {
-        paddingLeft: "30px",
-        paddingRight: "30px",
-        marginTop: "20px",
-        marginBottom: "20px",
-        wordWrap: "break-word"
-    },
 };
 
 const Box = ({ title, subtitle, children, customTitleColor = "black" }) => {
