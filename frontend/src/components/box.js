@@ -6,7 +6,6 @@ const styles = {
         display: "flex",
         flexDirection: "column", // Stack main content vertically
         alignItems: "flex-start", // Align items to the left
-        boxShadow: "3px 3px 0px 0px rgba(0, 0, 0, 0.25)",
         marginBottom: "30px",
         paddingTop: "10px",
         paddingBottom: "10px",
@@ -44,6 +43,7 @@ const styles = {
         paddingRight: "30px",
         marginTop: "20px",
         marginBottom: "20px",
+        wordWrap: "break-word"
     },
 };
 
