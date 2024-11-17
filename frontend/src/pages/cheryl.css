@@ -70,8 +70,10 @@
 .upload {
     background-color: #fff; 
     color: black;              
-    border: none;               
-    padding: 10px 20px;    
+    border: none;            
+    height: 38px;
+    width: 38px;
+    padding: 4px 4px; 
     font-size: 16px;        
     font-weight: 600;  
     border-radius: 5px;     
@@ -155,7 +157,7 @@
 }
 
 .active.btn {
-    color: #8F1B2F;  
+    color: #EB0A1E;  
 }
 
 .tabs.c button {
@@ -215,7 +217,7 @@
 .trendsSubtitle {
     font-family: 'Raleway';
     font-size: 18px;
-    color: #8F1B2F;
+    color: #555555;
     margin: 0;
     margin-left: 20px;
     padding-top: 42px;
