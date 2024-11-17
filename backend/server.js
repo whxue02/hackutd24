@@ -62,9 +62,9 @@ app.get('/api/fuel-efficiency/category/:category', async (req, res) => {
   }
 });
 
-// Endpoint to get fuel efficiency data for a specific model (e.g., Prius)
+// Endpoint to get fuel efficiency data for a specific model
 app.get('/api/fuel-efficiency/model/:model', async (req, res) => {
-  const { model } = req.params; // Corrected to 'model' instead of 'category'
+  const { model } = req.params; // Corrected from category to model
 
   console.log(`Fetching data for model: ${model}`); // Debugging log
 
