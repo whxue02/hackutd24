@@ -1,5 +1,6 @@
 import Navbar from "../components/navbar";
 import Box from "../components/box";
+import "./cheryl.css"
 import "animate.css";
 import { useSearchParams, Link } from "react-router-dom";
 
@@ -16,7 +17,7 @@ const styles = {
         // Keep existing styles for flex centering
         border: "2px dashed rgba(143, 27, 47, 0.3)",
         borderRadius: "15px",
-        width: "100%",
+        width: "400px",
         height: "250px",
         backgroundColor: "white",
         display: "flex",
@@ -25,6 +26,7 @@ const styles = {
         alignItems: "center",
         textAlign: "center",
         padding: "20px",
+        margin: "20px",
         cursor: "pointer",
         transition: "background-color 0.2s",
     },
@@ -99,14 +101,17 @@ const Upload = () => {
     };
 
     return (
-        <div>
+        <div className="animate__animated animate__fadeIn backgroundgrey">
             <Navbar />
             {/* There is no file uploaded, awaiting upload*/}
-            <div style={styles.container}>
             {!fileParam && 
-                <Box title="Upload New File">
+                <div className="container c">
+                <div className="analyzeBox">
+                    <div className="headerRow">
+                        <p className="trendsTitle centerText">Upload File</p>
+                    </div>
                     <div
-                        style={styles.uploadBox}
+                        className="upload-box"
                         onDragOver={handleDragOver}
                         onDrop={handleDrop}
                     >
@@ -128,19 +133,28 @@ const Upload = () => {
                             id="fileInput"
                         />
                     </div>
-                </Box>}
-
+                </div>
+            </div>}
             {/* There is a file uploaded */}
             { fileParam && 
-                <Box title="Upload">
-                    <div style={styles.children}>
-                        <div>Visual</div>
-                        <div>Analysis</div>
-                        <Link to="/upload" >Cancel</Link>
+            <div className="container c">
+                <div className="analyzeBox">
+                    <div className="headerRow">
+                        <p className="trendsTitle centerText">Upload File</p>
                     </div>
-                </Box>
-            }
+                    <div className="">
+                        <p className="uploadSubtitle">Visual Representation</p>
+                        <img src="/images/landing.svg" className="graph"></img>
+                        <p className="uploadSubtitle">Analysis</p>
+                        <p className="uploadContent">cheryl wangcheryl wangcheryl wangcheryl wangcheryl wangcheryl wangcheryl wangcheryl wangcheryl wangcheryl wangcheryl wangcheryl wangcheryl wangcheryl wangcheryl wangcheryl wangcheryl wangcheryl wangcheryl wangcheryl wangcheryl wangcheryl wangcheryl wang</p>
+                        <Link to="/upload" >
+                            <button className="cancel">Cancel</button>
+                        </Link>
+
+                    </div>
+                </div>
             </div>
+            }
         </div>
     );
 };
