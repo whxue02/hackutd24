@@ -1,13 +1,15 @@
 const styles = {
     text: {
-        margin: "20px",
-        paddingTop: "20px",
+        margin: "10px",
+        marginRight: "20px",
+        size: "16px",
+        textAlign: "left",
     }
 }
 
-const currentAnalysis = ({ type, addedData = {} }) => {
+const currentAnalysis = ({ type, text = "" }) => {
     return (
-        <p style={styles.text}>This is where the future analysis will go</p>
+        <p style={styles.text}>{text}</p>
     );
 };
 
