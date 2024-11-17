@@ -1,7 +1,7 @@
 import Navbar from "../components/navbar"
-import Box from "../components/box"
 import { useState, useEffect, useRef } from "react";
 import "animate.css"
+import { PyScriptProvider, PyScript } from 'pyscript-react';
 
 const Analyze = () => {
     const [Tab, setTab] = useState("sedan")
@@ -25,6 +25,10 @@ const Analyze = () => {
             setAnalysisHeight(analysisRef.current.clientHeight + 100); 
         }
     }, [Tab]);
+
+    const config = {
+        packages: ['matplotlib', 'numpy'], // Add required Python packages here
+    };
 
     return(
         <div className="animate__animated animate__fadeIn backgroundgrey">
@@ -63,23 +67,36 @@ const Analyze = () => {
                         </div>
                     </div>
                     <div className="tabContent a c" ref={contentRef}>
+                        <PyScriptProvider config={config}>
                         {Tab === "sedan" && (
                             <div className="animate__animated animate__fadeIn fade c">
-                                sedan
+                                        <div>
+                                            <h1>Python Integration Example</h1>
+                                            <PyScript type="py" src="/analyze.py"/>
+                                        </div>
                             </div>
                         )}
                         {Tab === "mini" && (
-                            <div className="animate__animated animate__fadeIn fade c">mini</div>
+                            <div className="animate__animated animate__fadeIn fade c">
+                                SAMBA MINIVAN
+                            </div>
                         )}
                         {Tab === "coupe" && (
-                            <div className="animate__animated animate__fadeIn fade c">coupecoupecoupecoupecoupecoupeccoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecooupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupe</div>
+                            <div className="animate__animated animate__fadeIn fade c">
+                                SAMBA COUPE
+                            </div>
                         )}
                         {Tab === "truck" && (
-                            <div className="animate__animated animate__fadeIn fade c">truck</div>
+                            <div className="animate__animated animate__fadeIn fade c">
+                                SAMBA TRUCK
+                            </div>
                         )}
                         {Tab === "suv" && (
-                            <div className="animate__animated animate__fadeIn fade c"></div>
+                            <div className="animate__animated animate__fadeIn fade c">
+                                SAMBA SUV
+                            </div>
                         )}
+                        </PyScriptProvider>
                     </div>
                 </div>
             </div>
@@ -92,19 +109,29 @@ const Analyze = () => {
                     </div>
                     <div className="analysisContent c" ref={analysisRef}>
                         {Tab === "sedan" && (
-                            <div className="animate__animated animate__fadeIn fade c">sedan</div>
+                            <div className="animate__animated animate__fadeIn fade c">
+                                SAMBA SEDAN
+                            </div>
                         )}
                         {Tab === "mini" && (
-                            <div className="animate__animated animate__fadeIn fade c">mini</div>
+                            <div className="animate__animated animate__fadeIn fade c">
+                                SAMBA MINIVAN
+                            </div>
                         )}
                         {Tab === "coupe" && (
-                            <div className="animate__animated animate__fadeIn fade c">coupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecocoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupecoupe</div>
+                            <div className="animate__animated animate__fadeIn fade c">
+                                SAMBA COUPE
+                            </div>
                         )}
                         {Tab === "truck" && (
-                            <div className="animate__animated animate__fadeIn fade c">truck</div>
+                            <div className="animate__animated animate__fadeIn fade c">
+                                SAMBA TRUCK
+                            </div>
                         )}
                         {Tab === "suv" && (
-                            <div className="animate__animated animate__fadeIn fade c"> </div>
+                            <div className="animate__animated animate__fadeIn fade c">
+                                SAMBA SUV
+                            </div>
                         )}
                     </div>
                 </div>
