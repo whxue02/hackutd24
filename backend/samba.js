@@ -44,12 +44,37 @@ const getPredictions = async (carData) => {
   }
 };
 
+// Function to create a description of the future (2026) predicted fuel, fuel efficiency, and sustainability of a category and its models
+const createDescription = (predictions) => {
+  const descriptions = {};
+  predictions.forEach((prediction) => {
+    const category = prediction.category;
+    const model = prediction.model;
+    const fuel = prediction.fuel;
+    const fuelEfficiency = prediction.fuel_efficiency;
+    const sustainability = prediction.sustainability;
+
+    if (!descriptions[category]) {
+      descriptions[category] = {};
+    }
+
+    descriptions[category][model] = {
+      fuel: `In 2026, ${model} is expected to run on ${fuel} fuel.`,
+      fuelEfficiency: `In 2026, ${model} is expected to have a fuel efficiency of ${fuelEfficiency} MPG.`,
+      sustainability: `In 2026, ${model} is expected to have a sustainability score of ${sustainability}.`,
+    };
+  });
+
+  return descriptions;
+};
+
 // API endpoint to get predictions for all models
 router.post('/api/samba/predict/all', async (req, res) => {
   try {
     const cars = await fetchCarData();
     const predictions = await getPredictions(cars);
-    res.json(predictions);
+    const descriptions = createDescription(predictions);
+    res.json(descriptions);
   } catch (err) {
     res.status(500).json({ message: 'Error fetching predictions', error: err.message });
   }
