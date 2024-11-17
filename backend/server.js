@@ -7,7 +7,8 @@ const port = 5000;
 app.use(cors()); // Enable CORS for frontend requests
 app.use(express.json()); // Parse incoming JSON requests
 
-mongoose.connect('mongodb://localhost:27017/toyotaDB')
+
+mongoose.connect('mongodb+srv://hack:utd@hackutd24.z0b9c.mongodb.net/')
   .then(() => console.log('Connected to MongoDB!'))
   .catch(err => console.error('Error connecting to MongoDB:', err));
 
