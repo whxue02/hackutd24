@@ -1,3 +1,7 @@
+.fade.c {
+    animation-delay: 0.35s;
+}
+
 .homepageBody {
     height: 100vh;
     width: 100%;
@@ -55,11 +59,12 @@
     width: 300px;
     margin-left: 60px;
     margin-top: 20px;
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: background-color 0.3s ease, color 0.5s ease;
 }
 
 .analyze:hover {
     background-color: #b80f1d;
+    cursor: pointer;   
 }
 
 .upload {
@@ -80,6 +85,7 @@
 
 .upload:hover {
     background-color: #ddd9d9;
+    cursor: pointer;   
 }
 
 .margin-top20 {
@@ -95,3 +101,195 @@
     transform: scale(1.05);
     
 }
+
+.container.c {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.analyzeBox {
+    width: 80%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    border-width: 1px;
+    border-bottom-width: 3px;
+    border-right-width: 3px;
+    border-color: #E2E2E2;
+    transition: height 0.5s ease, width 0.3s ease; 
+    overflow: hidden;
+    padding: 1px;
+}
+
+.tabcontainer.c {
+    display: flex;
+    justify-content: space-evenly;  
+    align-items: center;        
+    width: 95%;                  
+    height: auto;
+    margin:0;
+    padding:0;
+    
+}
+
+.tabs.c {
+    display: flex;            
+    justify-content: center;    
+    align-items: center;   
+    border-color: #252e48;   
+    width: 100%;
+    margin-left: 0;  
+    max-height: 60px;   
+    padding-top: 10px;
+}
+
+.tab.c {
+    height:100%;
+    flex: 1;
+    display: flex;
+    justify-content: center; 
+    align-items: center;  
+}
+
+.active.btn {
+    color: #8F1B2F;  
+}
+
+.tabs.c button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    height: 100%;
+    background-color: transparent;
+}
+
+.tabTitle.c {
+    font-family: 'Raleway';
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+    background-color: transparent;
+}
+
+.tabContent {
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 80px;
+    border-radius: 5px;
+    word-wrap: break-word;
+}
+
+.analysisContent {
+    padding: 30px;
+    border-radius: 5px;
+    word-wrap: break-word;
+}
+.backgroundgrey {
+    min-height: 100vh;
+    background-color: #EEEEEE;
+}
+
+.headerRow {
+    display: flex; 
+    align-items: center; 
+    width: 100%; 
+    box-shadow: 0px 5px rgba(143, 27, 47, 0.3);
+    padding-bottom: 20px;
+}
+
+.trendsTitle {
+    font-family: 'Work Sans'; 
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0; 
+    color: #252e48; 
+    padding-top: 30px;
+    padding-left: 40px
+}
+
+.trendsSubtitle {
+    font-family: 'Raleway';
+    font-size: 18px;
+    color: #8F1B2F;
+    margin: 0;
+    margin-left: 20px;
+    padding-top: 42px;
+    font-weight: 600;
+}
+
+.upload-box {
+    border: 2px dashed rgba(143, 27, 47, 0.3);
+    border-radius: 15px;
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    margin: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    max-width: 600px; 
+    margin: 20px auto;
+}
+
+.upload-box:hover {
+    background-color: #F5F5F5; /* Light background on hover */
+}
+
+.uploadSubtitle {
+    font-family: 'Raleway';
+    font-size: 18px;
+    color: #8F1B2F;
+    margin: 0;
+    padding-top: 40px;
+    padding-bottom: 0;
+    font-weight: 600;
+}
+
+.cancel {
+    background-color: #EB0A1E; 
+    color: white;              
+    border: none;               
+    padding: 10px 20px;    
+    font-size: 16px;        
+    font-weight: 600;  
+    border-radius: 5px;     
+    cursor: pointer;           
+    box-shadow: 3px 3px #8F1B2F;
+    transition: all 0.3s ease; 
+    width: 300px;
+    margin: 0, auto;
+    transition: background-color 0.3s ease, color 0.5s ease;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.cancel:hover {
+    background-color: #b80f1d;
+    cursor: pointer;   
+}
+
+.uploadContent {
+    padding: 20px;
+    padding-bottom: 0;
+    padding-top: 10px;
+    word-wrap: break-word;
+    margin:0
+}
+
+.graph {
+    width: 60%;
+    margin-top: 20px;
+    border: 2px solid rgba(143, 27, 47, 0.3);
+    border-radius: 15px;
+}
+

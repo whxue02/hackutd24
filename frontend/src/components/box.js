@@ -6,7 +6,6 @@ const styles = {
         display: "flex",
         flexDirection: "column", // Stack main content vertically
         alignItems: "flex-start", // Align items to the left
-        boxShadow: "3px 3px 0px 0px rgba(0, 0, 0, 0.25)",
         marginBottom: "30px",
         paddingTop: "10px",
         paddingBottom: "10px",
@@ -38,12 +37,6 @@ const styles = {
         height: "5px",
         width: "100%",
         backgroundColor: "rgba(143, 27, 47, 0.3)",
-    },
-    children: {
-        paddingLeft: "30px",
-        paddingRight: "30px",
-        marginTop: "20px",
-        marginBottom: "20px",
     },
 };
 
