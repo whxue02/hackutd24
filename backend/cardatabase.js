@@ -18,7 +18,7 @@ const carSchema = new mongoose.Schema({
   category: {
     type: String,
     required: true,
-    // enum: ['coup', 'minivan', 'sedan', 'suv', 'truck']
+    // enum: ['coupe', 'minivan', 'sedan', 'suv', 'truck']
   }, // Categories: Minivan, Truck, Sedan, Coupe, SUV
   fuel: {
     type: String,
@@ -61,7 +61,7 @@ const carData = [
   {model: '4runner', category: 'suv', fuel: 'gasoline', fuel_efficiency: 17, year: 2021},
   {model: 'sequoia', category: 'suv', fuel: 'gasoline', fuel_efficiency: 14.5, year: 2021},
   {model: 'land cruiser wagon', category: 'suv', fuel: 'gasoline', fuel_efficiency: 14, year: 2021},
-  {model: 'gr86', category: 'coup', fuel: 'gasoline', fuel_efficiency: 23.5, year: 2022},
+  {model: 'gr86', category: 'coupe', fuel: 'gasoline', fuel_efficiency: 23.5, year: 2022},
   {model: 'c-hr', category: 'sedan', fuel: 'gasoline', fuel_efficiency: 29, year: 2022},
   {model: 'corolla', category: 'sedan', fuel: 'gasoline', fuel_efficiency: 32.875, year: 2022},
   {model: 'corolla hatchback', category: 'sedan', fuel: 'gasoline', fuel_efficiency: 33, year: 2022},
@@ -79,8 +79,8 @@ const carData = [
   {model: 'venza', category: 'suv', fuel: 'gasoline', fuel_efficiency: 39, year: 2022},
   {model: '4runner', category: 'suv', fuel: 'gasoline', fuel_efficiency: 17, year: 2022},
   {model: 'sequoia', category: 'suv', fuel: 'gasoline', fuel_efficiency: 14.5, year: 2022},
-  {model: 'gr86', category: 'coup', fuel: 'gasoline', fuel_efficiency: 23.5, year: 2023},
-  {model: 'gr corolla', category: 'coup', fuel: 'gasoline', fuel_efficiency: 24, year: 2023},
+  {model: 'gr86', category: 'coupe', fuel: 'gasoline', fuel_efficiency: 23.5, year: 2023},
+  {model: 'gr corolla', category: 'coupe', fuel: 'gasoline', fuel_efficiency: 24, year: 2023},
   {model: 'corolla', category: 'sedan', fuel: 'gasoline', fuel_efficiency: 34.5, year: 2023},
   {model: 'corolla hatchback', category: 'sedan', fuel: 'gasoline', fuel_efficiency: 34, year: 2023},
   {model: 'camry', category: 'sedan', fuel: 'gasoline', fuel_efficiency: 28.625, year: 2023},
@@ -96,7 +96,7 @@ const carData = [
   {model: 'venza', category: 'suv', fuel: 'gasoline', fuel_efficiency: 39, year: 2023},
   {model: '4runner', category: 'suv', fuel: 'gasoline', fuel_efficiency: 17, year: 2023},
   {model: 'sequoia', category: 'suv', fuel: 'gasoline', fuel_efficiency: 21, year: 2023},
-  {model: 'gr86', category: 'coup', fuel: 'gasoline', fuel_efficiency: 23, year: 2024},
+  {model: 'gr86', category: 'coupe', fuel: 'gasoline', fuel_efficiency: 23, year: 2024},
   {model: 'gr corolla', category: 'subcompact cars', fuel: 'gasoline', fuel_efficiency: 24, year: 2024},
   {model: 'corolla', category: 'sedan', fuel: 'gasoline', fuel_efficiency: 34.5, year: 2024},
   {model: 'corolla hatchback', category: 'sedan', fuel: 'gasoline', fuel_efficiency: 34, year: 2024},
@@ -117,7 +117,7 @@ const carData = [
   {model: 'grand highlander limited', category: 'suv', fuel: 'gasoline', fuel_efficiency: 24, year: 2024},
   {model: 'sequoia', category: 'suv', fuel: 'gasoline', fuel_efficiency: 21, year: 2024},
   {model: 'land cruiser', category: 'suv', fuel: 'gasoline', fuel_efficiency: 23, year: 2024},
-  {model: 'gr corolla', category: 'coup', fuel: 'gasoline', fuel_efficiency: 23, year: 2025},
+  {model: 'gr corolla', category: 'coupe', fuel: 'gasoline', fuel_efficiency: 23, year: 2025},
   {model: 'corolla', category: 'sedan', fuel: 'gasoline', fuel_efficiency: 34.25, year: 2025},
   {model: 'corolla hatchback', category: 'sedan', fuel: 'gasoline', fuel_efficiency: 34, year: 2025},
   {model: 'camry', category: 'sedan', fuel: 'gasoline', fuel_efficiency: 47.6, year: 2025},
