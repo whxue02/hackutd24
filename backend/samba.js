@@ -4,9 +4,19 @@ const router = express.Router();
 const Car = require('./cardatabase'); // Assuming carDatabase exports the Car model
 require('dotenv').config(); // Load environment variables
 
+const app = express();
+const cors = require('cors');
+app.use(cors({
+  origin: 'http://localhost:3000', // Frontend's origin
+  methods: ['GET', 'POST', 'OPTIONS'], // Allow necessary HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allow necessary headers
+}));
+
+
 // Samba Nova API configuration
 const SAMBA_API_URL = 'https://api.sambanova.com/predict'; // Replace with the actual Samba Nova API endpoint
 const SAMBA_API_KEY = process.env.SAMBA_API_KEY; // Load the API key from .env file
+console.log('API Key:', SAMBA_API_KEY);
 
 // Function to get data from MongoDB
 const fetchCarData = async () => {
