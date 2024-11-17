@@ -204,6 +204,13 @@
     padding-bottom: 20px;
 }
 
+.header {
+    margin-top: 20px;
+    display: flex; 
+    align-items: center; 
+    width: 100%; 
+}
+
 .trendsTitle {
     font-family: 'Work Sans'; 
     font-size: 40px;
@@ -212,6 +219,16 @@
     color: #252e48; 
     padding-top: 30px;
     padding-left: 40px
+}
+
+.trendsTitle2 {
+    font-family: 'Work Sans'; 
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0; 
+    color: #EB0A1E; 
+    padding-top: 30px;
+    padding-left: 18px
 }
 
 .trendsSubtitle {

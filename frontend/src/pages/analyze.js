@@ -68,6 +68,10 @@ const Analyze = () => {
                         {Tab === "sedan" && (
                             <div className="animate__animated animate__fadeIn fade c">
                             <Chart type="sedan" />
+                            <div className="header">
+                             <p className="trendsTitle2">Trends Analysis</p>
+                             <p className="trendsSubtitle">Powered by Samba Nova</p>
+                            </div>
                                 <CurrentAnalysis type="sedan" text="From 2021 to 2025, the data reveals a consistent improvement in the fuel efficiency of several car models, particularly in the Toyota Corolla, Toyota Prius, and Toyota Camry. For the Toyota Prius, fuel efficiency remained steady at 50.5 MPG in 2021 and 2022, but it increased to 53 MPG by 2023 and continued at this level through 2024. Similarly, the Prius Eco maintained a high fuel efficiency of 56 MPG from 2021 through 2022. The Toyota Corolla also demonstrated stable fuel efficiency, starting at 32.875 MPG in 2021 and 2022, with a gradual improvement to 34.5 MPG by 2024, followed by a slight dip to 34.25 MPG in 2025.
                                 The Toyota Camry saw a steady fuel efficiency between 2021 and 2023, maintaining around 28.1 MPG for the first two years before showing an increase to 28.6 MPG in 2023. However, a significant leap was observed in 2025, where fuel efficiency nearly doubled to 47.6 MPG. The Toyota Crown and Crown Signia, on the other hand, maintained relatively stable fuel efficiencies from 2023 to 2025, with the Crown hovering around 35.5 MPG and the Crown Signia showing a slight improvement to 38 MPG in 2025.
                                 In contrast, the Toyota Avalon experienced a slight decrease in fuel efficiency, dropping from 26 MPG in 2021 to 25.5 MPG in 2022. The Toyota C-HR had relatively consistent fuel efficiency between 2021 and 2022, maintaining 29 MPG. Overall, the dataset demonstrates a general trend toward improved fuel efficiency for most models, with notable advancements in the hybrid and eco-friendly categories like the Prius and Corolla." />
@@ -76,6 +80,10 @@ const Analyze = () => {
                         {Tab === "mini" && (
                             <div className="animate__animated animate__fadeIn fade c">
                                 <Chart type="minivan" />
+                                <div className="header">
+                             <p className="trendsTitle2">Trends Analysis</p>
+                             <p className="trendsSubtitle">Powered by Samba Nova</p>
+                            </div>
                                 <CurrentAnalysis type="minivan" text="From 2021 through 2024, the Toyota Sienna has maintained a consistent fuel efficiency of 35.5 miles per gallon (MPG). Given this stability, it's anticipated that the fuel efficiency for 2025 will likely remain the same, continuing the trend of providing reliable and efficient performance. The Sienna’s fuel type, likely a hybrid, remains unchanged throughout these years, ensuring an environmentally friendly approach while maintaining practical fuel economy. As a result, the Toyota Sienna stands out for its ability to sustain a steady fuel efficiency performance over these years, offering consumers both sustainability and cost-effectiveness. Furthermore, its sustainability score is expected to be consistent as Toyota continues to improve the hybrid technology. Thus, the Toyota Sienna represents a dependable option for eco-conscious buyers seeking a balance of performance, efficiency, and sustainability from 2021 to 2025.
                                 This analysis reflects the historical data trends and incorporates the expected consistency in the Sienna's performance, making it a solid choice for the near future." />
                             </div>
@@ -83,6 +91,10 @@ const Analyze = () => {
                         {Tab === "coupe" && (
                             <div className="animate__animated animate__fadeIn fade c">
                                 <Chart type="coupe" />
+                                <div className="header">
+                             <p className="trendsTitle2">Trends Analysis</p>
+                             <p className="trendsSubtitle">Powered by Samba Nova</p>
+                            </div>
                                 <CurrentAnalysis type="coupe" text="In the period from 2021 to 2025, the Toyota GR86 is expected to show slight fluctuations in fuel efficiency, with a small decrease from 23.5 MPG in 2022 to 23 MPG in 2024. Despite this decline, the GR86 will continue to be a fuel-efficient choice for drivers seeking performance without significant environmental impact. The model's sustainability score is expected to remain stable, reflecting Toyota’s continued efforts to balance performance with environmental responsibility.
                                 For the Toyota GR Corolla, fuel efficiency trends slightly downward over the period, from 24 MPG in 2023 to 23 MPG by 2025. This decrease could reflect evolving design changes or a focus on performance enhancements that prioritize driving experience over fuel efficiency. Nonetheless, the GR Corolla is expected to maintain a relatively high sustainability score, ensuring that its reduced fuel efficiency does not significantly impact its eco-friendliness. Both models are expected to offer a blend of performance and sustainability, with the GR86 retaining more consistent fuel efficiency compared to the GR Corolla, which experiences a gradual decline." />
                             </div>
@@ -90,6 +102,10 @@ const Analyze = () => {
                         {Tab === "suv" && (
                             <div className="animate__animated animate__fadeIn fade c">
                                 <Chart type="suv" />
+                                <div className="header">
+                             <p className="trendsTitle2">Trends Analysis</p>
+                             <p className="trendsSubtitle">Powered by Samba Nova</p>
+                            </div>
                                 <CurrentAnalysis type="suv" text="Between 2021 and 2025, Toyota's car models show a diverse range of fuel efficiencies across different categories. The Toyota Highlander, running on regular fuel, demonstrates a steady fuel efficiency of around 23.33 to 24.33 MPG. This model represents a moderate performance improvement over the years, with only slight yearly variations.
                                 The Toyota RAV4, also using regular fuel, maintains a strong fuel efficiency of 29.4 MPG in 2021-2023, but sees a small drop to 29.25 MPG in 2024. The RAV4 Offroad variant shows consistent fuel efficiency, hovering at 28 MPG from 2021 through 2024, which reflects its off-road capabilities and slightly reduced efficiency compared to standard models.
                                 In contrast, the Toyota Venza, a hybrid model, offers impressive fuel efficiency, maintaining a steady 39 MPG from 2021 through 2024. This consistent performance indicates Toyota’s strong commitment to providing sustainable, fuel-efficient hybrid options, which stands out significantly from the other models.
@@ -101,6 +117,10 @@ const Analyze = () => {
                         {Tab === "truck" && (
                             <div className="animate__animated animate__fadeIn fade c">
                                 <Chart type="truck" />
+                                <div className="header">
+                             <p className="trendsTitle2">Trends Analysis</p>
+                             <p className="trendsSubtitle">Powered by Samba Nova</p>
+                            </div>
                                 <CurrentAnalysis type="truck" text="In the years 2021 to 2025, the Toyota Tacoma is expected to maintain its fuel efficiency at around 19.67 MPG for the years 2021 to 2023, before improving slightly to 21.71 MPG in 2024. This steady increase indicates gradual enhancements in fuel efficiency, likely driven by improvements in engine technology and vehicle weight reduction. On the other hand, the Toyota Tundra begins with a fuel efficiency of 14.5 MPG in 2021, which improves significantly to 19.86 MPG by 2022. This trend continues with a small increase to 19.92 MPG in 2024, followed by a return to 19.86 MPG in 2025. These projections suggest that the Tundra will focus on stabilizing its fuel efficiency after initial improvements, likely in response to consumer demand for both performance and economy in large trucks. Both vehicles show gradual progress in fuel efficiency, with the Tacoma leading the way in more noticeable improvements over the years." />
                             </div>
                         )}
