@@ -10,6 +10,61 @@ const Analyze = () => {
     const contentRef = useRef(null);
     const analysisRef = useRef(null)
 
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    const loadPyodide = async () => {
+        try {
+            // Dynamically load the Pyodide script
+            const script = document.createElement("script");
+            script.src = "https://cdn.jsdelivr.net/pyodide/v0.23.2/full/pyodide.js";  // Ensure this version matches
+            script.onload = async () => {
+                try {
+                    // Once Pyodide is loaded, initialize it with the correct version
+                    const pyodideInstance = await window.loadPyodide({
+                        indexURL: "https://cdn.jsdelivr.net/pyodide/v0.23.2/full/",  // Make sure the indexURL matches the loaded version
+                    });
+                    console.log("Pyodide is loaded");
+
+                    // Install Python packages using micropip
+                    await pyodideInstance.loadPackage("micropip");
+                    const micropip = pyodideInstance.pyimport("micropip");
+                    await micropip.install('numpy');
+                    await micropip.install('matplotlib');
+                    pyodideInstance.loadPackage("numpy");
+                    pyodideInstance.loadPackage("matplotlib");
+
+                    console.log('Packages installed');
+
+                    // Now you can run Python code
+                    const result = await pyodideInstance.runPythonAsync(`
+                        import matplotlib.pyplot as plt
+
+                        print("testing!")
+                        `);
+                    console.log(result);
+
+                    setIsLoaded(true);  // Set the state to indicate Pyodide is ready
+                } catch (err) {
+                    console.error("Error initializing Pyodide:", err);
+                    Error("Error initializing Pyodide. Please try again.");
+                }
+            };
+            script.onerror = () => {
+                console.error("Failed to load Pyodide script");
+                Error("Failed to load Pyodide script. Please check your network.");
+            };
+            document.body.appendChild(script);
+        } catch (err) {
+            console.error("Error loading Pyodide:", err);
+            Error("Error loading Pyodide.");
+        }
+    };
+
+    useEffect(() => {
+        loadPyodide(); // Trigger loading Pyodide when the component mounts
+    }, []);
+
+
     const handleTab = (tab) => {
         setTab(tab);
     }
@@ -27,7 +82,7 @@ const Analyze = () => {
     }, [Tab]);
 
     const config = {
-        packages: ['matplotlib', 'numpy'], // Add required Python packages here
+        packages: ['matplotlib', 'numpy'], // Specify the Python packages here
     };
 
     return(
@@ -67,15 +122,17 @@ const Analyze = () => {
                         </div>
                     </div>
                     <div className="tabContent a c" ref={contentRef}>
-                        <PyScriptProvider config={config}>
-                        {Tab === "sedan" && (
-                            <div className="animate__animated animate__fadeIn fade c">
-                                        <div>
-                                            <h1>Python Integration Example</h1>
-                                            <PyScript type="py" src="/analyze.py"/>
-                                        </div>
-                            </div>
-                        )}
+                        
+                        { isLoaded  && <PyScriptProvider config={config}>
+                            {Tab === "sedan" && (
+                                <div className="animate__animated animate__fadeIn fade c">
+                                    <div>
+                                        <h1>Python Integration Example</h1>
+                                        <PyScript type="py" src="analyze.py"/>
+                                    </div>
+                                </div>
+                            )}
+                        </PyScriptProvider>}
                         {Tab === "mini" && (
                             <div className="animate__animated animate__fadeIn fade c">
                                 SAMBA MINIVAN
@@ -96,7 +153,6 @@ const Analyze = () => {
                                 SAMBA SUV
                             </div>
                         )}
-                        </PyScriptProvider>
                     </div>
                 </div>
             </div>
