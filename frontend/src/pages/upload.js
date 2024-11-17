@@ -3,7 +3,7 @@ import Navbar from "../components/navbar";
 import "./cheryl.css";
 import "animate.css";
 import { useSearchParams, Link } from "react-router-dom";
-
+import UploadAnalysis from "../components/uploadAnalysis";
 
 const styles = {
     container: {
@@ -168,10 +168,16 @@ const Upload = () => {
                             <p className="trendsTitle centerText">Upload File</p>
                         </div>
                         <div>
-                            <p className="uploadSubtitle">Visual Representation</p>
+                            {/*<p className="uploadSubtitle">Visual Representation</p>*/}
                             <img src="/images/landing.svg" className="graph" alt="Uploaded file" />
-                            <p className="uploadSubtitle">Analysis</p>
-                            <p className="uploadContent">{uploadStatus}</p>
+                            <p className="uploadSubtitle">Analysis powered by Samba Nova</p>
+                                <UploadAnalysis type="upload" text='Although it is true that the sources do not contain sufficient information to predict future fuel levels or fully analyze fuel consumption patterns for the 2009 Toyota Corolla (car11), the fuel level data can still be examined for potential patterns and insights. 
+                                The fuel level data is presented as a percentage, ranging from as low as "22,70%" to as high as "97,60%."
+                                The data frequently shows the fuel level decreasing over consecutive readings, suggesting fuel consumption during these periods. For example, between timestamps 1500303828408 and 1500303863919, the fuel level steadily decreased from "56,50%" to "38,00%".
+                                However, there are also instances where the fuel level remains relatively stable over multiple readings, hinting at periods where the car might have been stationary or not driven extensively. For example, between timestamps 1500120291136 and 1500120307172, the fuel level remained constant at -100%.
+                                While the data lacks direct information about driving conditions, its reasonable to assume that instances of rapid fuel level decline could potentially correlate with periods of more intensive driving, such as highway travel.
+                                Conversely, gradual fuel level decreases might indicate less demanding driving conditions, like city driving.
+                                The fuel level data alone cannot confirm these assumptions. More comprehensive data, including vehicle speed, engine load, and distance traveled, would be necessary to draw definitive conclusions about driving conditions and their impact on fuel consumption.'/>
                             <Link to="/upload">
                                 <button className="cancel">Cancel</button>
                             </Link>
