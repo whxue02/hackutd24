@@ -1,4 +1,19 @@
-# macos
-*.DS_Store
+# MacOS
+.DS_Store
 
-/node_modules
+# Environment variables
+*.env
+
+# JetBrains
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# Backend
+backend/serpapi
+
+# Frontend
+frontend/package.json
+frontend/package-lock.json
+node_modules/
